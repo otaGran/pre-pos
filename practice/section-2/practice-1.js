@@ -1,5 +1,18 @@
 'use strict';
 
 function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  let myMap=new Map();
+  for(let i = 0;i<collection.length;i++){
+    if(myMap.has(collection[i])===false){
+      myMap.set(collection[i],1);
+    }else{
+      myMap.set(collection[i],myMap.get(collection[i])+1);
+    }
+  }
+  let res = [];
+  for (var [key, value] of myMap) {
+    res.push({"key":key,"count":value});
+  }
+  console.log(myMap.valueOf());
+  return res;
 }
